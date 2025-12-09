@@ -119,4 +119,4 @@ Recommandations pour l'hébergement:
 
 ## Licence
 
-© 2024 Traiteur Yoldez Chouaib. Tous droits réservés.
+© 2025 Traiteur Yoldez Chouaib. Tous droits réservés.
