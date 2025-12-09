@@ -1,0 +1,174 @@
+// Prisma schema for Traiteur Yoldez Chouaib
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ============ CATEGORIES ============
+model Category {
+  id        String   @id @default(cuid())
+  name      String
+  nameAr    String?
+  slug      String   @unique
+  dishes    Dish[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// ============ DISHES/PLATS ============
+model Dish {
+  id          String      @id @default(cuid())
+  name        String
+  nameAr      String?
+  description String?
+  price       Float
+  image       String?
+  categoryId  String
+  category    Category    @relation(fields: [categoryId], references: [id])
+  rating      Float       @default(0)
+  reviews     Int         @default(0)
+  portions    String[]
+  isPopular   Boolean     @default(false)
+  isAvailable Boolean     @default(true)
+  orderItems  OrderItem[]
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+}
+
+// ============ CUSTOMERS ============
+model Customer {
+  id        String   @id @default(cuid())
+  firstName String
+  lastName  String?
+  email     String   @unique
+  phone     String?
+  address   String?
+  city      String?
+  orders    Order[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// ============ ORDERS/COMMANDES ============
+model Order {
+  id           String      @id @default(cuid())
+  orderNumber  String      @unique @default(cuid())
+  customerId   String
+  customer     Customer    @relation(fields: [customerId], references: [id])
+  items        OrderItem[]
+  total        Float
+  status       OrderStatus @default(PENDING)
+  deliveryDate DateTime?
+  deliveryTime String?
+  address      String?
+  city         String?
+  phone        String?
+  notes        String?
+  paymentMethod String?
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+}
+
+model OrderItem {
+  id       String @id @default(cuid())
+  orderId  String
+  order    Order  @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  dishId   String
+  dish     Dish   @relation(fields: [dishId], references: [id])
+  quantity Int
+  price    Float
+  portion  String?
+}
+
+enum OrderStatus {
+  PENDING
+  CONFIRMED
+  PREPARING
+  DELIVERING
+  DELIVERED
+  CANCELLED
+}
+
+// ============ POSTS/PUBLICATIONS ============
+model Post {
+  id        String    @id @default(cuid())
+  content   String
+  image     String?
+  likes     Int       @default(0)
+  comments  Comment[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+model Comment {
+  id        String   @id @default(cuid())
+  postId    String
+  post      Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+  userName  String
+  userImage String?
+  text      String
+  createdAt DateTime @default(now())
+}
+
+// ============ SAVED MENUS ============
+model SavedMenu {
+  id         String   @id @default(cuid())
+  name       String
+  customerId String?
+  items      Json
+  total      Float
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+// ============ SETTINGS ============
+model Settings {
+  id                    String  @id @default("main")
+  restaurantName        String  @default("Traiteur Yoldez Chouaib")
+  phone                 String  @default("+21623632664")
+  email                 String  @default("Yoldes.ch82@gmail.com")
+  address               String  @default("Tunis, Sousse")
+  deliveryFee           Float   @default(7)
+  freeDeliveryThreshold Float   @default(50)
+  openingHours          String  @default("8h - 22h")
+  whatsappNumber        String  @default("+21623632664")
+}
+
+// ============ ADMIN USERS ============
+model AdminUser {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  name      String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// ============ CONTACT MESSAGES ============
+model Message {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  phone     String?
+  subject   String
+  message   String
+  isRead    Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
+
+// ============ CUSTOMER REVIEWS ============
+model Review {
+  id         String   @id @default(cuid())
+  orderId    String   @unique
+  customerName String
+  customerCity String?
+  rating     Int      @default(5)
+  comment    String
+  isApproved Boolean  @default(false)
+  createdAt  DateTime @default(now())
+}
