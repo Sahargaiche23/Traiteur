@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Star, Quote } from 'lucide-react'
 import { motion } from 'framer-motion'
+import { API_BASE } from '../services/api'
 
 // Default testimonials (fallback)
 const defaultTestimonials = [
@@ -35,7 +36,7 @@ export default function Testimonials() {
 
   useEffect(() => {
     // Fetch approved reviews from API
-    fetch('http://localhost:3001/api/reviews')
+    fetch(`${API_BASE}/api/reviews`)
       .then(res => res.json())
       .then(data => setReviews(data))
       .catch(() => setReviews([]))

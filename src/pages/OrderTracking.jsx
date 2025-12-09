@@ -7,6 +7,7 @@ import {
 import { Link } from 'react-router-dom'
 import { useStore } from '../store/useStore'
 import { useAuth } from '../context/AuthContext'
+import { API_BASE } from '../services/api'
 
 export default function OrderTracking() {
   const { orders, fetchOrders } = useStore()
@@ -20,7 +21,7 @@ export default function OrderTracking() {
   const submitReview = async (orderId) => {
     if (!reviewForm.comment.trim()) return
     try {
-      await fetch('http://localhost:3001/api/reviews', {
+      await fetch(`${API_BASE}/api/reviews`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

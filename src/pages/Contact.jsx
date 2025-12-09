@@ -4,6 +4,7 @@ import {
   Phone, Mail, MapPin, Clock, Send, CheckCircle,
   Facebook, Instagram, MessageCircle 
 } from 'lucide-react'
+import { API_BASE } from '../services/api'
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -22,7 +23,7 @@ export default function Contact() {
     
     try {
       // Send message to API
-      const response = await fetch('http://localhost:3001/api/messages', {
+      const response = await fetch(`${API_BASE}/api/messages`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)

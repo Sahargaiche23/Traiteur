@@ -1,4 +1,5 @@
 import { createContext, useContext, useState, useEffect } from 'react'
+import { API_BASE } from '../services/api'
 
 const CartContext = createContext()
 
@@ -12,7 +13,7 @@ export function CartProvider({ children }) {
   useEffect(() => {
     const validateCart = async () => {
       try {
-        const res = await fetch('http://localhost:3001/api/dishes')
+        const res = await fetch(`${API_BASE}/api/dishes`)
         const dishes = await res.json()
         const validDishIds = new Set(dishes.map(d => d.id))
         

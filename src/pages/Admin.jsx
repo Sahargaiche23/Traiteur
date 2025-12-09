@@ -9,6 +9,7 @@ import {
 } from 'lucide-react'
 import { useStore, useAdminAuth } from '../store/useStore'
 import { categories as staticCategories } from '../data/dishes'
+import { API_BASE } from '../services/api'
 
 // Use static categories as fallback
 const categories = staticCategories
@@ -124,7 +125,7 @@ function DishFormModal({ dish, onSave, onClose }) {
 
   // Fetch categories from API
   useEffect(() => {
-    fetch('http://localhost:3001/api/categories')
+    fetch(`${API_BASE}/api/categories`)
       .then(res => res.json())
       .then(data => {
         setApiCategories(data)
@@ -414,7 +415,7 @@ export default function Admin() {
   // Fetch messages
   const fetchMessages = async () => {
     try {
-      const res = await fetch('http://localhost:3001/api/messages')
+      const res = await fetch(`${API_BASE}/api/messages`)
       const data = await res.json()
       setMessages(data)
     } catch (error) {
@@ -425,7 +426,7 @@ export default function Admin() {
   // Fetch reviews
   const fetchReviews = async () => {
     try {
-      const res = await fetch('http://localhost:3001/api/reviews/all')
+      const res = await fetch(`${API_BASE}/api/reviews/all`)
       const data = await res.json()
       setReviews(data)
     } catch (error) {
@@ -435,7 +436,7 @@ export default function Admin() {
 
   const approveReview = async (id) => {
     try {
-      await fetch(`http://localhost:3001/api/reviews/${id}/approve`, { method: 'PATCH' })
+      await fetch(`${API_BASE}/api/reviews/${id}/approve`, { method: 'PATCH' })
       fetchReviews()
       showNotification('Avis approuvé')
     } catch (error) {
@@ -446,7 +447,7 @@ export default function Admin() {
   const deleteReview = async (id) => {
     if (!confirm('Supprimer cet avis?')) return
     try {
-      await fetch(`http://localhost:3001/api/reviews/${id}`, { method: 'DELETE' })
+      await fetch(`${API_BASE}/api/reviews/${id}`, { method: 'DELETE' })
       fetchReviews()
       showNotification('Avis supprimé')
     } catch (error) {
@@ -456,7 +457,7 @@ export default function Admin() {
 
   const markMessageRead = async (id) => {
     try {
-      await fetch(`http://localhost:3001/api/messages/${id}/read`, { method: 'PATCH' })
+      await fetch(`${API_BASE}/api/messages/${id}/read`, { method: 'PATCH' })
       fetchMessages()
     } catch (error) {
       console.error('Error marking message read:', error)
@@ -466,7 +467,7 @@ export default function Admin() {
   const deleteMessage = async (id) => {
     if (!confirm('Supprimer ce message?')) return
     try {
-      await fetch(`http://localhost:3001/api/messages/${id}`, { method: 'DELETE' })
+      await fetch(`${API_BASE}/api/messages/${id}`, { method: 'DELETE' })
       fetchMessages()
       showNotification('Message supprimé')
     } catch (error) {
