@@ -13,8 +13,8 @@ export default function Footer() {
                 <ChefHat className="w-7 h-7 text-white" />
               </div>
               <div>
-                <h3 className="font-display text-xl font-semibold">Traiteur Yoldez Chouaib</h3>
-                <p className="text-sm text-secondary-400 font-arabic">يولدز شعيب</p>
+                <h3 className="font-display text-xl font-semibold">Traiteur Saida Fejjari Chouaieb</h3>
+                <p className="text-sm text-secondary-400 font-arabic">سعيدة فجاري شعيب</p>
               </div>
             </div>
             <p className="text-secondary-400 leading-relaxed">
@@ -60,7 +60,7 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-primary-500" />
-                <span className="text-secondary-400">+216 23 632 664</span>
+                <span className="text-secondary-400">+216 93 156 280</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-primary-500" />
@@ -108,7 +108,7 @@ export default function Footer() {
 
         <div className="border-t border-secondary-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-secondary-500 text-sm">
-            © 2025 Traiteur Yoldez Chouaib. Tous droits réservés.
+            © 2025 Traiteur Saida Fejjari Chouaieb. Tous droits réservés.
           </p>
           <div className="flex gap-6 text-sm">
             <a href="#" className="text-secondary-500 hover:text-primary-400 transition-colors">

@@ -1,4 +1,4 @@
-# Traiteur Yoldez Chouaib 🍽️
+# Traiteur Saida Fejjari Chouaieb 🍽️
 
 Application web complète pour un service traiteur en Tunisie avec livraison.
 
@@ -119,4 +119,4 @@ Recommandations pour l'hébergement:
 
 ## Licence
 
-© 2025 Traiteur Yoldez Chouaib. Tous droits réservés.
+© 2025 Traiteur Saida Fejjari Chouaieb. Tous droits réservés.

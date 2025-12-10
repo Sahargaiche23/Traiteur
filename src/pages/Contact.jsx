@@ -71,7 +71,7 @@ export default function Contact() {
               </h2>
               <div className="space-y-4">
                 {[
-                  { icon: Phone, label: 'Téléphone', value: '+216 23 632 664', href: 'tel:+21623632664' },
+                  { icon: Phone, label: 'Téléphone', value: '+216 93 156 280', href: 'tel:+21693156280' },
                   { icon: Mail, label: 'Email', value: 'Yoldes.ch82@gmail.com', href: 'mailto:Yoldes.ch82@gmail.com' },
                   { icon: MapPin, label: 'Adresse', value: 'Tunis, Sousse' },
                   { icon: Clock, label: 'Horaires', value: '8h - 22h, 7j/7' },

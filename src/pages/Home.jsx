@@ -305,7 +305,7 @@ export default function Home() {
                 Voir nos formules événements
               </Link>
               <a 
-                href="tel:+21623632664" 
+                href="tel:+21693156280" 
                 className="px-8 py-4 border-2 border-white text-white rounded-full font-semibold hover:bg-white/10 transition-colors"
               >
                 Nous contacter

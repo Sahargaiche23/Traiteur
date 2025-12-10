@@ -199,14 +199,14 @@ export const useStore = create((set, get) => ({
 
   // ============ SETTINGS STATE ============
   settings: {
-    restaurantName: 'Traiteur Yoldez Chouaib',
-    phone: '+21623632664',
+    restaurantName: 'Traiteur Saida Fejjari Chouaieb',
+    phone: '+21693156280',
     email: 'Yoldes.ch82@gmail.com',
     address: 'Tunis, Sousse',
     deliveryFee: 7,
     freeDeliveryThreshold: 50,
     openingHours: '8h - 22h',
-    whatsappNumber: '+21623632664',
+    whatsappNumber: '+21693156280',
   },
 
   fetchSettings: async () => {
@@ -315,7 +315,7 @@ export const useLivreurAuth = create(
         if (email === 'livreur@yoldezchouaib.tn' && password === 'livreur123') {
           set({ 
             isLivreurAuthenticated: true, 
-            livreur: { email, name: 'Livreur 1', phone: '+21623632664' }
+            livreur: { email, name: 'Livreur 1', phone: '+21693156280' }
           })
           return true
         }

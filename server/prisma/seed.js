@@ -227,14 +227,14 @@ async function main() {
     update: {},
     create: {
       id: 'main',
-      restaurantName: 'Traiteur Yoldez Chouaib',
-      phone: '+21623632664',
+      restaurantName: 'Traiteur Saida Fejjari Chouaieb',
+      phone: '+21693156280',
       email: 'Yoldes.ch82@gmail.com',
       address: 'Tunis, Sousse',
       deliveryFee: 7,
       freeDeliveryThreshold: 50,
       openingHours: '8h - 22h',
-      whatsappNumber: '+21623632664',
+      whatsappNumber: '+21693156280',
     },
   })
   console.log('✅ Created default settings')
