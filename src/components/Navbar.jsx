@@ -32,9 +32,9 @@ export default function Navbar() {
             </div>
             <div className="hidden sm:block">
               <h1 className="font-display text-xl font-semibold text-primary-800">
-                Traiteur Yoldez Chouaib
+                Traiteur Saida Fejjari Chouaieb
               </h1>
-              <p className="text-xs text-secondary-500 font-arabic">يولدز شعيب</p>
+              <p className="text-xs text-secondary-500 font-arabic">سعيدة فجاري شعيب</p>
             </div>
           </Link>
 

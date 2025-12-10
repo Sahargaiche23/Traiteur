@@ -50,8 +50,8 @@ function App() {
             <div className="absolute inset-0 border-4 border-primary-200 rounded-full"></div>
             <div className="absolute inset-0 border-4 border-primary-600 rounded-full border-t-transparent animate-spin"></div>
           </div>
-          <h1 className="font-display text-3xl text-primary-800 mb-2">Traiteur Yoldez Chouaib</h1>
-          <p className="text-secondary-600 font-arabic text-xl">يولدز شعيب</p>
+          <h1 className="font-display text-3xl text-primary-800 mb-2">Traiteur Saida Fejjari Chouaieb</h1>
+          <p className="text-secondary-600 font-arabic text-xl">سعيدة فجاري شعيب</p>
         </div>
       </div>
     )

@@ -64,9 +64,9 @@ export default function Home() {
             </span>
             <h1 className="font-display text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
               Traiteur<br />
-              <span className="text-primary-400">Yoldez Chouaib</span>
+              <span className="text-primary-400">Saida Fejjari Chouaieb</span>
             </h1>
-            <p className="font-arabic text-2xl text-primary-200 mb-4">يولدز شعيب</p>
+            <p className="font-arabic text-2xl text-primary-200 mb-4">سعيدة فجاري شعيب</p>
             <p className="text-xl text-secondary-300 mb-8 leading-relaxed">
               Des saveurs authentiques pour vos événements et repas quotidiens. 
               Commandez en ligne et profitez de notre service de livraison rapide.
